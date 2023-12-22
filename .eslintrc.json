@@ -24,15 +24,16 @@
               },
               {
                 "from": "core",
-                "allow": [["core", { "app": "${from.app}" }]]
+                "allow": [["lib-api"], ["core", { "app": "${from.app}" }]]
               },
               {
                 "from": "ui",
-                "allow": [["ui", { "app": "${from.app}" }]]
+                "allow": [["lib-api"], ["ui", { "app": "${from.app}" }]]
               },
               {
                 "from": "app",
                 "allow": [
+                  ["lib-api"],
                   ["app", { "app": "${from.app}" }],
                   ["core", { "app": "${from.app}" }],
                   ["feature", { "app": "${from.app}" }]
@@ -41,6 +42,7 @@
               {
                 "from": ["pattern"],
                 "allow": [
+                  ["lib-api"],
                   ["core", { "app": "${from.app}" }],
                   ["ui", { "app": "${from.app}" }]
                 ]
@@ -48,6 +50,7 @@
               {
                 "from": ["shared-feature"],
                 "allow": [
+                  ["lib-api"],
                   ["core", { "app": "${from.app}" }],
                   ["ui", { "app": "${from.app}" }],
                   ["pattern", { "app": "${from.app}" }]
@@ -56,11 +59,21 @@
               {
                 "from": ["feature"],
                 "allow": [
+                  ["lib-api"],
                   ["core", { "app": "${from.app}" }],
                   ["ui", { "app": "${from.app}" }],
                   ["pattern", { "app": "${from.app}" }],
                   ["shared-feature", { "app": "${from.app}" }]
                 ]
+              },
+
+              {
+                "from": ["lib-api"],
+                "allow": [["lib", { "app": "${from.lib}" }]]
+              },
+              {
+                "from": ["lib"],
+                "allow": [["lib", { "app": "${from.lib}" }]]
               }
             ]
           }
@@ -110,7 +123,6 @@
             "basePattern": "projects/**/src/app",
             "baseCapture": ["app"]
           },
-
           {
             "type": "ui",
             "pattern": "ui/*",
@@ -137,6 +149,18 @@
             "capture": ["feature"],
             "basePattern": "projects/**/src/app",
             "baseCapture": ["app"]
+          },
+
+          {
+            "type": "lib-api",
+            "mode": "file",
+            "pattern": "projects/**/src/public-api.ts",
+            "capture": ["lib"]
+          },
+          {
+            "type": "lib",
+            "pattern": "projects/**/src/lib",
+            "capture": ["lib"]
           }
         ]
       }
