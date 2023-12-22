@@ -93,11 +93,26 @@ p {
 
 ul {
   @apply list-disc text-lg ml-4 mb-4;
+
+  li {
+    @apply py-2;
+  }
+
+  &.checklist {
+    @apply list-none;
+
+    li {
+      @apply relative pl-8;
+
+      &::before {
+        @apply absolute left-0 top-2;
+        content: '✅';
+      }
+    }
+  }
 }
 
-ul li {
-  @apply py-2;
-}
+
 
 code {
   @apply inline-block mx-2 px-2 bg-blue-200 rounded;

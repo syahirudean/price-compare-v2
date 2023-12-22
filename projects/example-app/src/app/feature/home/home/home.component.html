@@ -1,6 +1,6 @@
 <code class="m-0 mb-2">feature</code>
 <h1>Home</h1>
-<p class="subtitle">
+<p class="subtitle mb-16">
   Welcome to the "Angular Enterprise Architecture" example. The application
   showcases many of the architectural approaches discussed in the ebook and can
   serve as an example (or starting point) when implementing your own project.
@@ -9,15 +9,22 @@
 <div class="grid md:grid-cols-2 gap-8">
   <div>
     <h2>Focus on architecture</h2>
-    <p></p>
-    <ul>
+    <p>
+      The example focuses on architecture and its automated validation and comes
+      with an example for ech individual concept as well as all eslint rules out
+      of the box. Adding some forbidden import, for example, try to import
+      <code>ProductService</code> in the
+      <code>OrderDashboardComponent</code> and run <code>ng lint</code> to see
+      it in action.
+    </p>
+    <ul class="checklist">
       <li>
         <strong>Architecture example</strong> - the project showcases all
         concepts that have been discussed in the ebook, namely
         <code>core</code>, <code>ui</code>, <code>pattern</code>,
         <code>feature</code> and <code>shared-feature</code> and how they can be
-        used together. The most of real life applications can almost always be expressed as
-        a unique combination of these concepts.
+        used together. The most of real life applications can almost always be
+        expressed as a unique combination of these concepts.
       </li>
       <li>
         <strong>Automated Architecture validation</strong> - the architecture
@@ -33,6 +40,11 @@
         <code>core/core.ts</code> in form of <code>provideCore()</code> as an
         inspiration how to implement your own functionality in a standalone
         compatible way.
+      </li>
+      <li>
+        <strong>Extendable</strong> - the setup supports extending of the
+        project by creating additional apps and libs in this workspace. The
+        provided rules for architecture validation cover this scenario as well.
       </li>
     </ul>
   </div>
