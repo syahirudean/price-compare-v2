@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { MainLayoutComponent } from './core/main-layout/main-layout.component';
+import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
 
 @Component({
   selector: 'my-org-root',

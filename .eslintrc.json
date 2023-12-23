@@ -31,11 +31,20 @@
                 "allow": [["lib-api"], ["ui", { "app": "${from.app}" }]]
               },
               {
+                "from": "layout",
+                "allow": [
+                  ["lib-api"],
+                  ["core", { "app": "${from.app}" }],
+                  ["ui", { "app": "${from.app}" }]
+                ]
+              },
+              {
                 "from": "app",
                 "allow": [
                   ["lib-api"],
                   ["app", { "app": "${from.app}" }],
                   ["core", { "app": "${from.app}" }],
+                  ["layout", { "app": "${from.app}" }],
                   ["feature", { "app": "${from.app}" }]
                 ]
               },
@@ -126,6 +135,12 @@
           {
             "type": "ui",
             "pattern": "ui/*",
+            "basePattern": "projects/**/src/app",
+            "baseCapture": ["app"]
+          },
+          {
+            "type": "layout",
+            "pattern": "layout/*",
             "basePattern": "projects/**/src/app",
             "baseCapture": ["app"]
           },
