@@ -9,3 +9,8 @@ By [Tomas Trajan](https://x.com/tomastrajan) | [Angular Experts](https://angular
 
 * `npm ci`
 * `npm start`
+
+
+## Dependency graph
+
+<img src="dependency-graph.png">

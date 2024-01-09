@@ -1,8 +1,8 @@
-import { Route } from '@angular/router';
+import { Routes } from '@angular/router';
 
 import { ItemEditorComponent } from './item-editor/item-editor.component';
 
-export const routes: Route[] = [
+export default <Routes>[
   {
     path: '',
     providers: [],

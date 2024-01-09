@@ -11,7 +11,8 @@
     "format:test": "prettier --list-different \"./projects/**/*.{ts,html,scss,json}\"",
     "format:write": "prettier --write \"./projects/**/*.{ts,html,scss,json}\"",
     "analyze": "ng build --stats-json --output-hashing=none --named-chunks && esbuild-visualizer --metadata dist/example-app/stats.json --filename dist/example-app/analyse/index.html  && http-server ./dist/example-app/analyse/",
-    "analyze:sme": "ng build --source-map --output-hashing=none --named-chunks && source-map-explorer dist/example-app/browser/*.js --html dist/example-app/sme/index.html && http-server ./dist/example-app/sme/"
+    "analyze:sme": "ng build --source-map --output-hashing=none --named-chunks && source-map-explorer dist/example-app/browser/*.js --html dist/example-app/sme/index.html && http-server ./dist/example-app/sme/",
+    "analyze:deps": "madge projects/example-app/src/main.ts --ts-config tsconfig.json --image ./dependency-graph.png"
   },
   "private": true,
   "dependencies": {
@@ -51,6 +52,7 @@
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "karma-coverage": "~2.2.0",
+    "madge": "^6.1.0",
     "postcss": "^8.4.32",
     "prettier": "^3.1.1",
     "source-map-explorer": "^2.5.3",

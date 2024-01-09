@@ -1,9 +1,9 @@
-import { Route } from '@angular/router';
+import { Routes } from '@angular/router';
 
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductService } from './product.service';
 
-export const routes: Route[] = [
+export default <Routes>[
   {
     path: '',
     providers: [ProductService],
@@ -15,9 +15,7 @@ export const routes: Route[] = [
           {
             path: 'item-editor/:name',
             loadChildren: () =>
-              import('../shared-item-editor/item-editor.routes').then(
-                (f) => f.routes,
-              ),
+              import('../shared-item-editor/item-editor.routes'),
           },
         ],
       },

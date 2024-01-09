@@ -1,8 +1,8 @@
-import { Route } from '@angular/router';
+import { Routes } from '@angular/router';
 
 import { OrderDashboardComponent } from './order-dashboard/order-dashboard.component';
 
-export const routes: Route[] = [
+export default <Routes>[
   {
     path: '',
     providers: [],
@@ -14,9 +14,7 @@ export const routes: Route[] = [
           {
             path: 'item-editor/:name',
             loadChildren: () =>
-              import('../shared-item-editor/item-editor.routes').then(
-                (f) => f.routes,
-              ),
+              import('../shared-item-editor/item-editor.routes'),
           },
         ],
       },
