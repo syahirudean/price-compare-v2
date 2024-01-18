@@ -3,8 +3,7 @@ import {
   Component,
   effect,
   inject,
-  Input,
-  signal,
+  input,
 } from '@angular/core';
 
 import { CardComponent } from '../../ui/card/card.component';
@@ -23,7 +22,7 @@ import { DocumentManagerCtx } from './document-manager.types';
 export class DocumentManagerComponent {
   private documentManagerService = inject(DocumentManagerService);
 
-  ctx = signal<DocumentManagerCtx>('default');
+  ctx = input<DocumentManagerCtx>('default');
   documents = this.documentManagerService.documents;
 
   ref = effect(
@@ -32,9 +31,4 @@ export class DocumentManagerComponent {
     },
     { allowSignalWrites: true },
   );
-
-  // eslint-disable-next-line @angular-eslint/no-input-rename
-  @Input({ alias: 'ctx' }) set _ctx(ctx: DocumentManagerCtx) {
-    this.ctx.set(ctx);
-  }
 }

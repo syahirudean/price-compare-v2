@@ -2,7 +2,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   EventEmitter,
-  Input,
+  input,
   Output,
 } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
@@ -17,6 +17,7 @@ import { MatButtonModule } from '@angular/material/button';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CardComponent {
-  @Input() isCloseable = false;
+  isCloseable = input(false);
+
   @Output() closed = new EventEmitter<void>();
 }
