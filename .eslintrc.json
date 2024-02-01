@@ -110,6 +110,7 @@
             "alwaysTryTypes": true
           }
         },
+        "boundaries/ignore": [],
         "boundaries/dependency-nodes": ["import", "dynamic-import"],
         "boundaries/elements": [
           {
