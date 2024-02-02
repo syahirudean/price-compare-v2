@@ -66,13 +66,21 @@
                 ]
               },
               {
+                "from": ["shared-feature-routes"],
+                "allow": [
+                  ["lib-api"],
+                  ["core", { "app": "${from.app}" }],
+                  ["shared-feature", { "app": "${from.app}" }]
+                ]
+              },
+              {
                 "from": ["feature"],
                 "allow": [
                   ["lib-api"],
                   ["core", { "app": "${from.app}" }],
                   ["ui", { "app": "${from.app}" }],
                   ["pattern", { "app": "${from.app}" }],
-                  ["shared-feature", { "app": "${from.app}" }]
+                  ["shared-feature-routes", { "app": "${from.app}" }]
                 ]
               },
 
@@ -149,6 +157,14 @@
             "type": "pattern",
             "pattern": "pattern/*",
             "capture": ["pattern"],
+            "basePattern": "projects/**/src/app",
+            "baseCapture": ["app"]
+          },
+          {
+            "type": "shared-feature-routes",
+            "mode": "file",
+            "pattern": "feature/shared-*/*.routes.ts",
+            "capture": ["feature"],
             "basePattern": "projects/**/src/app",
             "baseCapture": ["app"]
           },
