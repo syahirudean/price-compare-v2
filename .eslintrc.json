@@ -14,7 +14,7 @@
       ],
       "rules": {
         "boundaries/element-types": [
-          2,
+          "error",
           {
             "default": "disallow",
             "rules": [
