@@ -12,7 +12,7 @@
     "format:write": "prettier --write \"./projects/**/*.{ts,html,scss,json}\"",
     "analyze": "ng build --stats-json --output-hashing=none --named-chunks && esbuild-visualizer --template treemap --metadata dist/example-app/stats.json --filename dist/example-app/analyse/index.html  && http-server -o -c-1 ./dist/example-app/analyse/",
     "analyze:sme": "ng build --source-map --output-hashing=none --named-chunks && source-map-explorer dist/example-app/browser/*.js --html dist/example-app/sme/index.html && http-server -o -c-1 ./dist/example-app/sme/",
-    "analyze:deps": "madge projects/example-app/src/main.ts --ts-config tsconfig.json --image ./dependency-graph.png"
+    "analyze:deps": "madge projects/example-app/src/main.ts --ts-config tsconfig.json --image ./example-app-dep-graph.png"
   },
   "private": true,
   "dependencies": {

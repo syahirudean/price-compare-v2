@@ -13,4 +13,4 @@ By [Tomas Trajan](https://x.com/tomastrajan) | [Angular Experts](https://angular
 
 ## Dependency graph
 
-<img src="dependency-graph.png">
+<img src="example-app-dep-graph.png">
