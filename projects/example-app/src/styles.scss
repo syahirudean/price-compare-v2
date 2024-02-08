@@ -39,9 +39,9 @@ $ax-blue-palette: (
 
 $example-app-primary: mat.define-palette($ax-blue-palette, 700, 600, 900);
 $example-app-accent: mat.define-palette(mat.$blue-palette, A400, A100, A700);
+$example-app-warn: mat.define-palette(mat.$red-palette);
 
 // The warn palette is optional (defaults to red).
-$example-app-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
