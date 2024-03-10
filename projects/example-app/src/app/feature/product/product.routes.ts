@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
 
-import { ProductListComponent } from './product-list/product-list.component';
 import { ProductService } from './product.service';
 
 export default <Routes>[
@@ -10,7 +9,10 @@ export default <Routes>[
     children: [
       {
         path: '',
-        component: ProductListComponent,
+        loadComponent: () =>
+          import('./product-list/product-list.component').then(
+            (m) => m.ProductListComponent,
+          ),
         children: [
           {
             path: 'item-editor/:name',

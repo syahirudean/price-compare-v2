@@ -1,7 +1,5 @@
 import { Routes } from '@angular/router';
 
-import { OrderDashboardComponent } from './order-dashboard/order-dashboard.component';
-
 export default <Routes>[
   {
     path: '',
@@ -9,7 +7,10 @@ export default <Routes>[
     children: [
       {
         path: '',
-        component: OrderDashboardComponent,
+        loadComponent: () =>
+          import('./order-dashboard/order-dashboard.component').then(
+            (m) => m.OrderDashboardComponent,
+          ),
         children: [
           {
             path: 'item-editor/:name',

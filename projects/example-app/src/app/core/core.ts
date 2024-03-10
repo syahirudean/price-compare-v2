@@ -7,7 +7,7 @@ import {
   withRouterConfig,
 } from '@angular/router';
 import { ENVIRONMENT_INITIALIZER } from '@angular/core';
-import { provideAnimations } from '@angular/platform-browser/animations';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export interface CoreOptions {
   routes: Routes;
@@ -15,7 +15,7 @@ export interface CoreOptions {
 
 export function provideCore({ routes }: CoreOptions) {
   return [
-    provideAnimations(),
+    provideAnimationsAsync(),
     provideRouter(
       routes,
       withRouterConfig({
