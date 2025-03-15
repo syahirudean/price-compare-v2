@@ -1,5 +1,5 @@
 {
-  "name": "angular-enterprise-architecture-example",
+  "name": "price-compare",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -10,15 +10,15 @@
     "ci": "ng lint && ng test && ng build",
     "format:test": "prettier --list-different \"./projects/**/*.{ts,html,scss,json}\"",
     "format:write": "prettier --write \"./projects/**/*.{ts,html,scss,json}\"",
-    "analyze": "ng build --stats-json --output-hashing=none --named-chunks && esbuild-visualizer --template treemap --metadata dist/example-app/stats.json --filename dist/example-app/analyse/index.html  && http-server -o -c-1 ./dist/example-app/analyse/",
-    "analyze:sme": "ng build --source-map --output-hashing=none --named-chunks && source-map-explorer dist/example-app/browser/*.js --html dist/example-app/sme/index.html && http-server -o -c-1 ./dist/example-app/sme/",
+    "analyze": "ng build --stats-json --output-hashing=none --named-chunks && esbuild-visualizer --template treemap --metadata dist/price-compare/stats.json --filename dist/price-compare/analyse/index.html  && http-server -o -c-1 ./dist/price-compare/analyse/",
+    "analyze:sme": "ng build --source-map --output-hashing=none --named-chunks && source-map-explorer dist/price-compare/browser/*.js --html dist/price-compare/sme/index.html && http-server -o -c-1 ./dist/price-compare/sme/",
     "analyze:deps": "npm-run-all analyze:deps:*",
-    "analyze:deps:all": "madge projects/example-app/src/main.ts --ts-config tsconfig.json --image ./deps/example-app/_all.png",
-    "analyze:deps:ui": "madge  --extensions ts --ts-config tsconfig.json --image ./deps/example-app/ui.png projects/example-app/src/app/ui/",
-    "analyze:deps:pattern": "madge  --extensions ts --ts-config tsconfig.json --image ./deps/example-app/pattern.png projects/example-app/src/app/pattern/",
-    "analyze:deps:feature": "madge  --extensions ts --ts-config tsconfig.json --image ./deps/example-app/feature.png projects/example-app/src/app/feature/",
-    "analyze:deps:layout": "madge  --extensions ts --ts-config tsconfig.json --image ./deps/example-app/layout.png projects/example-app/src/app/layout/",
-    "analyze:deps:core": "madge  --extensions ts --ts-config tsconfig.json --image ./deps/example-app/core.png projects/example-app/src/app/core/"
+    "analyze:deps:all": "madge projects/price-compare/src/main.ts --ts-config tsconfig.json --image ./deps/price-compare/_all.png",
+    "analyze:deps:ui": "madge  --extensions ts --ts-config tsconfig.json --image ./deps/price-compare/ui.png projects/price-compare/src/app/ui/",
+    "analyze:deps:pattern": "madge  --extensions ts --ts-config tsconfig.json --image ./deps/price-compare/pattern.png projects/price-compare/src/app/pattern/",
+    "analyze:deps:feature": "madge  --extensions ts --ts-config tsconfig.json --image ./deps/price-compare/feature.png projects/price-compare/src/app/feature/",
+    "analyze:deps:layout": "madge  --extensions ts --ts-config tsconfig.json --image ./deps/price-compare/layout.png projects/price-compare/src/app/layout/",
+    "analyze:deps:core": "madge  --extensions ts --ts-config tsconfig.json --image ./deps/price-compare/core.png projects/price-compare/src/app/core/"
   },
   "private": true,
   "dependencies": {
